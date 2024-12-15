@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+{% block 'main' %}
+{% load static %}
+<!-- Menu Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="my-5">
+            <form class="form-inline my-2 my-lg-0" action="/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query" style="border-radius: 20px;">
+                <button class="btn btn-dark my-2 my-sm-0" style="border-radius: 20px;" type="submit">Search</button>
+            </form>
+        </div>
+        
+        <div class="row">
+            {% for x in data %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="rounded overflow-hidden mb-2">
+                    <!-- <img class="img-fluid" src="{{ x.cimage.url}}" alt="..." style="aspect-ratio: 10/7;"> -->
+                    <div class=" p-4" style="background-color: black; color: white;">
+                                                <a class="h5" href="">{{x.name}},</a>
+                                                <a class="h5" href="">{{ x.get_lc_display }}</a>
+                                                <p>{{ x.get_cat_display }}</p>
+                                                <!-- <a class="h5" href="" style="color: red;"></a> -->
+                        <div class="border-top mt-4 pt-4">
+                            <div class="d-flex justify-content-between">
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            
+        </div>
+    </div>
+</div>
+<!-- Menu End -->
+{% endblock 'main' %}
+{% include 'footer.html' %}

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/select2/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owlcarousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
+
+</head>
+<body class="bg-secondary">
+    <div>
+        <div class="row"><!--header section start-->
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+                    <div class="container-fluid">
+                        <!-- Form for category and location selection -->
+                        <form method="GET" action="{% url 'filter_courses' %}">
+                            <!-- Category Dropdown -->
+                            <div class="row">
+                                <div class="col-md-6  mt-4">
+                                    <select name="category" id="category" class="form-control" onchange="this.form.submit()">
+                                        <option value="">category</option>
+                                        <option value="1" {% if request.GET.category == '1' %}selected{% endif %}>Spiritual</option>
+                                        <option value="2" {% if request.GET.category == '2' %}selected{% endif %}>Historical</option>
+                                        <option value="3" {% if request.GET.category == '3' %}selected{% endif %}>Adventure</option>
+                                    </select>
+                                </div>
+                                
+    
+                                <!-- Location Dropdown -->
+                                <div class="col-md-6 mt-4 ">
+                                    <select name="location" id="location" class="form-control" onchange="this.form.submit()">
+                                        <option value="">location</option>
+                                        <option value="1" {% if request.GET.location == '1' %}selected{% endif %}>Rajasthan</option>
+                                        <option value="2" {% if request.GET.location == '2' %}selected{% endif %}>Delhi</option>
+                                        <option value="3" {% if request.GET.location == '3' %}selected{% endif %}>Gujarat</option>
+                                        <option value="4" {% if request.GET.location == '4' %}selected{% endif %}>Maharashtra</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div><!--header section end-->
+    </div>
+
+    
+
